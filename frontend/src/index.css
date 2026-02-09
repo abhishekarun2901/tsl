@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background font-body text-gray-900;
+  }
+}
+
+@layer components {
+  .match-card {
+    @apply bg-card rounded-lg shadow-md hover:shadow-xl transition-all duration-300 p-6;
+  }
+  
+  .score-display {
+    @apply text-4xl font-bold font-display;
+  }
+  
+  .live-indicator {
+    @apply inline-flex items-center gap-2 text-sm font-semibold text-red-600;
+  }
+  
+  .live-dot {
+    @apply w-2 h-2 bg-red-600 rounded-full animate-pulse;
+  }
+  
+  .team-logo {
+    @apply w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center text-xl font-bold;
+  }
+  
+  .btn-primary {
+    @apply bg-primary hover:bg-green-600 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-200;
+  }
+  
+  .table-row {
+    @apply border-b border-gray-100 hover:bg-gray-50 transition-colors duration-150;
+  }
+  
+  .stat-badge {
+    @apply inline-flex items-center justify-center min-w-[2rem] h-8 px-2 bg-gray-100 rounded font-semibold text-sm;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes flash {
+  0%, 100% {
+    background-color: transparent;
+  }
+  50% {
+    background-color: rgba(46, 204, 113, 0.1);
+  }
+}
+
+.flash-update {
+  animation: flash 1s ease-in-out;
+}
